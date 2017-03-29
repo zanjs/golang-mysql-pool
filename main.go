@@ -34,13 +34,23 @@ func tt() {
 
 	fmt.Println("sssss")
 	fmt.Println(a)
+
+	ss()
 }
 
 // AAA ls
 type AAA struct {
 	A string
+	B int
 }
 
 func ss() {
+
+	a := new(AAA)
+
+	a.A = "hel lo"
+
+	fmt.Printf("%+v\n", a)
+	fmt.Println(a)
 
 }
