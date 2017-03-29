@@ -9,13 +9,12 @@ import (
 
 // Pool is ...
 func Pool(w http.ResponseWriter, r *http.Request) {
-	rows, record := User()
+	users := User()
 
 	// 类型打印
-	fmt.Println(reflect.TypeOf(rows))
-	fmt.Println(reflect.TypeOf(record))
+	fmt.Println(reflect.TypeOf(users))
 	// map 返回json 编码
-	str, err := json.Marshal(record)
+	str, err := json.Marshal(users)
 
 	CheckErr(err)
 
