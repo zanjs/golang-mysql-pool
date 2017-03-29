@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        加载中...
+        <div>
+            <div>
+                title :
+            </div>
+            <div class="author">
+                author :
+            </div>
+            <div>
+                <img src="" alt="">
+            </div>
+            <hr />
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            ajaxJson()
+        }
+
+        function ajaxJson() {
+            $.ajax({
+                type: "get",
+                url: "http://cnodejs.org/api/v1/topics",
+                dataType: "json",
+                success: function (obj) {
+                    console.log(obj);
+                    if (obj.success) {
+                        list(obj.data)
+                    }
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        }
+
+        function list(arr) {
+            console.log(arr)
+           
+
+            let len = arr.length
+
+            let str = ''
+
+            for (var i = 0; i < len; i++) {
+
+                let data = arr[i]
+                let title = data.title
+                let create_at = data.create_at
+                let author = data.author
+
+
+                str +=
+                    `
+                    <div >
+                        <div>
+                            title : ${title}
+                        </div>
+                        <div class="author">
+                            author : ${author.loginname}
+                        </div>
+                        <div>
+                            <img src="${author.avatar_url}" alt="">
+                        </div>
+                        <hr />
+                    </div>
+                `
+
+            }
+
+
+            $("#app").html(str)
+
+        }
+    </script>
+</body>
+
+</html>
