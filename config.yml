@@ -1,0 +1,8 @@
+app:
+  port: 12306
+  version: 0.1.0
+
+db:
+  username: root
+  password: root
+  dbname: gotest

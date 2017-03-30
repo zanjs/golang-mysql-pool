@@ -1,7 +1,7 @@
 package main
 
-// User is ...
-func User() (record map[string]string) {
+// ModelUser is ...
+func ModelUser() (record map[string]string) {
 	sql := "SELECT * FROM user"
 	// rows := RSQL(sql)
 	// rows, err := DB.Query(sql)

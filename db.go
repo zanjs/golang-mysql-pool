@@ -2,13 +2,18 @@ package main
 
 import (
 	"database/sql"
+
+	"github.com/jinzhu/configor"
 )
 
 // DB is ...
 var DB *sql.DB
 
 func init() {
-	DB, _ = sql.Open("mysql", "root:root@/gotest?charset=utf8")
+
+	configor.Load(&Config, "config.yml")
+
+	DB, _ = sql.Open("mysql", Config.DB.UserName+":"+Config.DB.PassWord+"@/"+Config.DB.DBName+"?charset=utf8")
 	DB.SetMaxIdleConns(2000)
 	DB.SetMaxIdleConns(1000)
 	DB.Ping()

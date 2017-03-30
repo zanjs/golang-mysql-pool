@@ -1,0 +1,44 @@
+// 将设置放入此文件中以覆盖默认值和用户设置。
+{
+// Go configuration
+    // Run 'go build'/'go test -c' on save.
+    "go.buildOnSave": true,
+    // Flags to `go build`/`go test` used during build-on-save or running tests. (e.g. ['-ldflags="-s"'])
+    "go.buildFlags": [],
+    // Run Lint tool on save.
+    "go.lintOnSave": true,
+    // Specifies Lint tool name.
+    "go.lintTool": "golint",
+    // Flags to pass to Lint tool (e.g. ['-min_confidenc=.8'])
+    "go.lintFlags": [],
+    // Run 'go tool vet' on save.
+    "go.vetOnSave": true,
+    // Flags to pass to `go tool vet` (e.g. ['-all', '-shadow'])
+    "go.vetFlags": [],
+    // Pick 'gofmt', 'goimports' or 'goreturns' to run on format.
+    "go.formatTool": "goreturns",
+    // Flags to pass to format tool (e.g. ['-s'])
+    "go.formatFlags": [],
+    // Run the formatting tools with the -d flag
+    "go.useDiffForFormatting": true,
+    // Complete functions with their parameter signature
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    // Specifies the GOPATH to use when no environment variable is set.
+    "go.gopath": "D:/lang/go/path",
+    // Specifies the GOROOT to use when no environment variable is set.
+    "go.goroot": "D:/lang/go/1.8.0",
+    // Run formatting tool on save.
+    "go.formatOnSave": true,
+    // Run 'go test -coverprofile' on save
+    "go.coverOnSave": false,
+    // Specifies the timeout for go test in ParseDuration format.
+    "go.testTimeout": "30s",
+    // Enable gocode's autobuild feature
+    "go.gocodeAutoBuild": true,
+    // The Go build tags to use for all commands that support a `-tags '...'` argument
+    "go.buildTags": "",
+    // Environment variables that will passed to the process that runs the Go tests
+    "go.testEnvVars": {},
+    // Autocomplete members from unimported packages.
+    "go.autocompleteUnimportedPackages": true
+}

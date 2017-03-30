@@ -9,7 +9,7 @@ import (
 
 // Pool is ...
 func Pool(w http.ResponseWriter, r *http.Request) {
-	users := User()
+	users := ModelUser()
 
 	// 类型打印
 	fmt.Println(reflect.TypeOf(users))
@@ -19,4 +19,16 @@ func Pool(w http.ResponseWriter, r *http.Request) {
 	CheckErr(err)
 
 	fmt.Fprintln(w, string(str))
+}
+
+// Users is ...
+func Users(w http.ResponseWriter, r *http.Request) {
+	users := ModelUser()
+
+	str, err := json.Marshal(users)
+
+	CheckErr(err)
+
+	fmt.Fprintln(w, string(str))
+
 }
